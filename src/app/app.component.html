@@ -2,7 +2,7 @@
   <button (click)="sidenav.toggle()" class="toolbar-button" md-mini-fab><md-icon>menu</md-icon></button>
   <div class="toolbar-button-row">
     <a md-button
-      *ngFor="let topLink of links" href="#">
+      *ngFor="let topLink of links" href={{topLink.path}}>
       <md-icon>{{topLink.icon}}</md-icon> &nbsp; {{topLink.label}}
     </a>
   </div>

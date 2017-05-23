@@ -4,8 +4,8 @@ import { Observable } from 'rxjs/Observable'
 
 @Injectable()
 export class FilmService {
-  searchUrl: string = "http://www.omdbapi.com/?page=1&s=";
-  filmUrl: string = "http://www.omdbapi.com/?i=";
+  searchUrl: string = "http://www.omdbapi.com/?apikey=520bbe17&s=";
+  filmUrl: string = "http://www.omdbapi.com/?apikey=520bbe17&i=";
   
   constructor(private http: Http) { }
 
