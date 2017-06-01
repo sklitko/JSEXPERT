@@ -18,6 +18,5 @@ export class FilmCardComponent implements OnInit {
       this.filmItem = data;
     })
   }
-
 }
 
