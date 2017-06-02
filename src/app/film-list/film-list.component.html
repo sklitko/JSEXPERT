@@ -1,9 +1,16 @@
 
 <film-search (searchEv)='searchFilm($event)'></film-search>
-<md-grid-list *ngIf="filmList[0]" cols="2" rowHeight="800px">
+<form class="views">
+  <md-select placeholder="Views" [(ngModel)]="selectedView" name="view" (change)="setView($event)"> 
+    <md-option *ngFor="let view of views" [value]="view.value">
+      {{view.viewValue}}
+    </md-option>
+  </md-select>
+</form>
+<md-grid-list *ngIf="filmList[0]" cols="2" [rowHeight]="rowHeight">
 		
   <md-grid-tile *ngFor="let film of filmList">
-		<film-card [filmId]="film.imdbID">
+		<film-card [filmId]="film.imdbID" [view]="selectedView">
 			
 		</film-card>
 	</md-grid-tile>

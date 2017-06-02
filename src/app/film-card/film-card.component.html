@@ -1,6 +1,17 @@
 
-		<md-card class="film-card">
-			<img md-card-image src="{{filmItem.Poster}}">
+		<md-card class="film-card-grid" *ngIf="view === 'grid'">
+			<img md-card-image class="img-grid" src="{{filmItem.Poster}}">
+			<md-card-content>
+				<md-card-title>{{filmItem.Title}}</md-card-title>
+				<p>Релиз: {{filmItem.Released}}</p>
+				<p>{{filmItem.Plot}}</p>
+			</md-card-content>
+			<md-card-actions>
+				<button md-button>Подробнее</button>
+			</md-card-actions>
+		</md-card>
+		<md-card class="film-card-list" *ngIf="view === 'list'">
+			<img md-card-image class="img-list" src="{{filmItem.Poster}}">
 			<md-card-content>
 				<md-card-title>{{filmItem.Title}}</md-card-title>
 				<p>Релиз: {{filmItem.Released}}</p>

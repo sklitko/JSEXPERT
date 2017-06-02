@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FilmService} from '../film.service'
 
 @Component({
@@ -12,6 +12,10 @@ export class FilmListComponent implements OnInit {
   filmList : any[] = []
   filmName : string; 
   pageNumber: string;
+  selectedView: string;
+  rowHeight: string;
+
+ 
 
   constructor(private filmListService: FilmService) { }
 
@@ -19,8 +23,14 @@ export class FilmListComponent implements OnInit {
     this.filmName = "Lord";
     this.pageNumber = "1";
     this.getFilms(this.filmName);
-    
-  }
+    this.selectedView = "grid";
+    this.rowHeight = "850px";
+ }
+
+ views = [
+    {value: 'grid', viewValue: 'Сетка'},
+    {value: 'list', viewValue: 'Список'}
+  ];
 
   private getFilms(filmName: string): void {
     if(filmName) {
@@ -54,4 +64,10 @@ export class FilmListComponent implements OnInit {
     this.pageNumber = String(parseInt(this.pageNumber) + 1);
     this.searchFilm(this.filmName);
   }
+
+  setView() {
+    this.selectedView === 'grid' ? this.rowHeight = '850px' : this.rowHeight = '400px';
+  }
+
+  
 }
