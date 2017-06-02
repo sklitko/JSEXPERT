@@ -10,14 +10,14 @@ import { AppComponent } from './app.component';
 import { FilmCardComponent } from './film-card/film-card.component';
 import { FilmService } from './film.service';
 import { FilmListComponent } from './film-list/film-list.component';
-import { SearchComponent } from './search/search.component';
+import { FilmSearchComponent } from './film-search/film-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilmCardComponent,
     FilmListComponent,
-    SearchComponent
+    FilmSearchComponent
   ],
   imports: [
     BrowserAnimationsModule,

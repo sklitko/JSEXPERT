@@ -1,6 +1,6 @@
 
-<search></search>
-<md-grid-list cols="2" rowHeight="800px">
+<film-search (searchEv)='searchFilm($event)'></film-search>
+<md-grid-list *ngIf="filmList[0]" cols="2" rowHeight="800px">
 		
   <md-grid-tile *ngFor="let film of filmList">
 		<film-card [filmId]="film.imdbID">
@@ -9,4 +9,6 @@
 	</md-grid-tile>
 
 </md-grid-list>
+<button md-button *ngIf="filmList[0]" (click)="addMoreFilms()">Еще фильмы</button>
+<div *ngIf="!filmList[0]">Фильмы не найдены</div>
 
