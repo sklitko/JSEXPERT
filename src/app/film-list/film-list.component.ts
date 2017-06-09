@@ -11,7 +11,7 @@ export class FilmListComponent implements OnInit {
 
   filmList : any[] = []
   filmName : string; 
-  pageNumber: string;
+  pageNumber: number;
   selectedView: string;
   rowHeight: string;
 
@@ -21,7 +21,7 @@ export class FilmListComponent implements OnInit {
 
   ngOnInit() {
     this.filmName = "Lord";
-    this.pageNumber = "1";
+    this.pageNumber = 1;
     this.getFilms(this.filmName);
     this.selectedView = "grid";
     this.rowHeight = "850px";
@@ -53,7 +53,7 @@ export class FilmListComponent implements OnInit {
       this.getFilms(this.filmName);  
     } else {
       this.filmName = film;
-      this.pageNumber = "1";
+      this.pageNumber = 1;
       this.filmList = [];
       this.getFilms(this.filmName);
     }
@@ -61,7 +61,7 @@ export class FilmListComponent implements OnInit {
   }
 
   addMoreFilms(): void {
-    this.pageNumber = String(parseInt(this.pageNumber) + 1);
+    this.pageNumber = this.pageNumber + 1;
     this.searchFilm(this.filmName);
   }
 

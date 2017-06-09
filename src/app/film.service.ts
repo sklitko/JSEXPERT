@@ -21,10 +21,10 @@ private extractListData(res: Response): Array<any> {
     return body || {};
   }
 
-  getFilms(filmName: string, pageNumber: string): Observable<any> {
+  getFilms(filmName: string, pageNumber: number): Observable<any> {
     let params: URLSearchParams = new URLSearchParams();
     params.set('apikey', this.apiKey);
-    params.set('page', pageNumber || '1');
+    params.set('page', String(pageNumber || 1));
     params.set('s', filmName);
     return this.http.get(this.url, {search: params}).map(this.extractListData).catch((error: any)=>{ return Observable.throw(error);});
   }
