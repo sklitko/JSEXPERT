@@ -2,3 +2,12 @@
    margin: 50px auto; 
    max-width: 884px;
 }
+
+film-search {
+    margin-left: 75px;
+}
+
+.views {
+    display: inline-block;
+    margin-left: 535px;
+}

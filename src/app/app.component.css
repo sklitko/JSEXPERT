@@ -20,6 +20,9 @@ md-sidenav {
   box-shadow: 3px 0 6px rgba(0,0,0,.24);
   width: 200px;
 }
+
+
+
 .mat-sidenav-container {
   background: #f5f5f5;
   flex: 1;
@@ -27,7 +30,7 @@ md-sidenav {
 
 .app-content {
    margin: 50px auto; 
-   max-width: 830px;
+   max-width: 1000px;
 }
 .dashboard-card {
   max-width: 300px;
